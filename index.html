@@ -243,12 +243,58 @@
         }
 
         .footer a:hover { text-decoration: underline; }
+
+        /* Header wrapper */
+        .header {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Arcade Coming Soon badge */
+        .arcade-badge {
+            position: absolute;
+            top: 0;
+            right: -90px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #0ff;
+            border: 1px solid #0ff;
+            border-radius: 4px;
+            padding: 0.2rem 0.5rem;
+            white-space: nowrap;
+            text-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+            box-shadow: 0 0 6px rgba(0, 255, 255, 0.4), inset 0 0 6px rgba(0, 255, 255, 0.1);
+            animation: neon-flicker 3s infinite;
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.6; }
+            94% { opacity: 1; }
+            96% { opacity: 0.8; }
+            97% { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .arcade-badge {
+                position: static;
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="avatar">🤖</div>
-        <h1>Zane</h1>
+        <div class="header">
+            <h1>Zane</h1>
+            <span class="arcade-badge">Arcade Coming Soon</span>
+        </div>
         <p class="subtitle">Lijie's Personal AI Assistant</p>
 
         <div class="card">
