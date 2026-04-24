@@ -286,6 +286,183 @@
             .pong-controls-info { display: none; }
         }
 
+        /* Snake */
+        .snake-wrapper {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0 16px 16px 16px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .snake-wrapper:hover { border-color: rgba(102, 126, 234, 0.3); }
+
+        #snake-canvas {
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            background: #05050a;
+            max-width: 100%;
+            cursor: pointer;
+        }
+
+        .snake-hud {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0 0.25rem;
+        }
+
+        .snake-stat {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .snake-label {
+            font-size: 0.7rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .snake-controls-info {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .snake-touch-controls {
+            display: none;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        .snake-dpad {
+            display: grid;
+            grid-template-columns: repeat(3, 48px);
+            grid-template-rows: repeat(3, 48px);
+            gap: 4px;
+        }
+
+        .snake-dpad .touch-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+
+        .snake-dpad .empty { visibility: hidden; }
+
+        @media (max-width: 600px) {
+            .snake-touch-controls { display: flex; }
+            .snake-controls-info { display: none; }
+        }
+
+        /* 2048 */
+        .game2048-wrapper {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0 16px 16px 16px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .game2048-wrapper:hover { border-color: rgba(102, 126, 234, 0.3); }
+
+        .game2048-hud {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0 0.25rem;
+        }
+
+        .game2048-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .game2048-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.04);
+            color: transparent;
+            transition: transform 0.1s, background 0.15s;
+            user-select: none;
+        }
+
+        .game2048-cell[data-value="2"]    { background: rgba(102,126,234,0.15); color: #667eea; }
+        .game2048-cell[data-value="4"]    { background: rgba(102,126,234,0.25); color: #7b93f0; }
+        .game2048-cell[data-value="8"]    { background: rgba(118,75,162,0.3);  color: #a87bd8; }
+        .game2048-cell[data-value="16"]   { background: rgba(118,75,162,0.45); color: #c084fc; }
+        .game2048-cell[data-value="32"]   { background: rgba(192,132,252,0.35); color: #d4a5ff; }
+        .game2048-cell[data-value="64"]   { background: rgba(192,132,252,0.5); color: #e0b8ff; }
+        .game2048-cell[data-value="128"]  { background: rgba(0,255,255,0.15); color: #0ff; text-shadow: 0 0 8px rgba(0,255,255,0.5); }
+        .game2048-cell[data-value="256"]  { background: rgba(0,255,255,0.25); color: #0ff; text-shadow: 0 0 10px rgba(0,255,255,0.6); font-size: 1.3rem; }
+        .game2048-cell[data-value="512"]  { background: rgba(0,255,255,0.35); color: #0ff; text-shadow: 0 0 12px rgba(0,255,255,0.7); font-size: 1.3rem; }
+        .game2048-cell[data-value="1024"] { background: rgba(0,255,255,0.45); color: #fff; text-shadow: 0 0 14px rgba(0,255,255,0.8); font-size: 1.1rem; }
+        .game2048-cell[data-value="2048"] { background: linear-gradient(135deg, #667eea, #0ff); color: #fff; text-shadow: 0 0 16px rgba(0,255,255,1); font-size: 1.1rem; box-shadow: 0 0 20px rgba(0,255,255,0.4); }
+
+        .game2048-controls-info {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .game2048-touch-controls {
+            display: none;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .game2048-touch-controls { display: flex; }
+            .game2048-controls-info { display: none; }
+            .game2048-cell { font-size: 1.1rem; }
+            .game2048-cell[data-value="256"],
+            .game2048-cell[data-value="512"] { font-size: 1rem; }
+            .game2048-cell[data-value="1024"],
+            .game2048-cell[data-value="2048"] { font-size: 0.85rem; }
+        }
+
+        .game2048-over-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(10,10,15,0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c084fc;
+            text-shadow: 0 0 10px rgba(192,132,252,0.6);
+        }
+
+        .game2048-grid-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
         /* Footer */
         .footer {
             margin-top: 2rem;
@@ -376,6 +553,8 @@
         <div class="games-section">
             <div class="game-tabs">
                 <button class="game-tab active" data-game="pong">Pong</button>
+                <button class="game-tab" data-game="snake">Snake</button>
+                <button class="game-tab" data-game="2048">2048</button>
             </div>
 
             <!-- Pong Game -->
@@ -407,6 +586,74 @@
                     </div>
                 </div>
                 <div class="pong-controls-info">W / S &mdash; left paddle &nbsp;&bull;&nbsp; &uarr; / &darr; &mdash; right paddle &nbsp;&bull;&nbsp; Space &mdash; pause</div>
+            </div>
+            </div>
+
+            <!-- Snake Game -->
+            <div class="game-panel" id="game-snake">
+            <div class="snake-wrapper">
+                <h2 style="color: #667eea; font-size: 1.1rem; margin-bottom: 0.5rem;">Snake</h2>
+                <div class="snake-hud">
+                    <div>
+                        <div class="snake-label">Score</div>
+                        <div class="snake-stat" id="snake-score">0</div>
+                    </div>
+                    <button class="pong-btn" id="snake-start">Start Game</button>
+                    <div>
+                        <div class="snake-label">Best</div>
+                        <div class="snake-stat" id="snake-best">0</div>
+                    </div>
+                </div>
+                <canvas id="snake-canvas" width="400" height="400"></canvas>
+                <div class="snake-touch-controls">
+                    <div class="snake-dpad">
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-snake="up">&#9650;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-snake="left">&#9664;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-snake="right">&#9654;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-snake="down">&#9660;</button>
+                        <div class="empty"></div>
+                    </div>
+                </div>
+                <div class="snake-controls-info">Arrow keys or WASD &mdash; move &nbsp;&bull;&nbsp; Space &mdash; pause</div>
+            </div>
+            </div>
+
+            <!-- 2048 Game -->
+            <div class="game-panel" id="game-2048">
+            <div class="game2048-wrapper">
+                <h2 style="color: #667eea; font-size: 1.1rem; margin-bottom: 0.5rem;">2048</h2>
+                <div class="game2048-hud">
+                    <div>
+                        <div class="snake-label">Score</div>
+                        <div class="snake-stat" id="g2048-score">0</div>
+                    </div>
+                    <button class="pong-btn" id="g2048-start">New Game</button>
+                    <div>
+                        <div class="snake-label">Best</div>
+                        <div class="snake-stat" id="g2048-best">0</div>
+                    </div>
+                </div>
+                <div class="game2048-grid-container">
+                    <div class="game2048-grid" id="g2048-grid"></div>
+                </div>
+                <div class="game2048-touch-controls">
+                    <div class="snake-dpad">
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-g2048="up">&#9650;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-g2048="left">&#9664;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-g2048="right">&#9654;</button>
+                        <div class="empty"></div>
+                        <button class="touch-btn" data-g2048="down">&#9660;</button>
+                        <div class="empty"></div>
+                    </div>
+                </div>
+                <div class="game2048-controls-info">Arrow keys or WASD &mdash; slide tiles</div>
             </div>
             </div>
         </div>
@@ -745,6 +992,399 @@
 
         // Draw idle state
         drawIdle();
+    })();
+
+    // ==================== SNAKE ====================
+    (function () {
+        const canvas = document.getElementById('snake-canvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('snake-start');
+        const scoreEl = document.getElementById('snake-score');
+        const bestEl = document.getElementById('snake-best');
+
+        const SIZE = 400;
+        const CELL = 20;
+        const COLS = SIZE / CELL;
+        const ROWS = SIZE / CELL;
+
+        // Responsive
+        function resizeCanvas() {
+            const wrapper = canvas.parentElement;
+            const maxW = wrapper.clientWidth - 48;
+            const w = Math.min(SIZE, maxW);
+            canvas.style.width = w + 'px';
+            canvas.style.height = w + 'px';
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        let snake, dir, nextDir, food, score, best = 0, running = false, paused = false, gameOver = false;
+        let intervalId;
+        const SPEED = 110; // ms per step
+
+        function init() {
+            snake = [{ x: 10, y: 10 }, { x: 9, y: 10 }, { x: 8, y: 10 }];
+            dir = { x: 1, y: 0 };
+            nextDir = { x: 1, y: 0 };
+            score = 0;
+            gameOver = false;
+            paused = false;
+            scoreEl.textContent = '0';
+            placeFood();
+        }
+
+        function placeFood() {
+            let pos;
+            do {
+                pos = { x: Math.floor(Math.random() * COLS), y: Math.floor(Math.random() * ROWS) };
+            } while (snake.some(function(s) { return s.x === pos.x && s.y === pos.y; }));
+            food = pos;
+        }
+
+        function step() {
+            if (paused || gameOver) return;
+            dir = nextDir;
+            const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+            // Wall collision
+            if (head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS) {
+                endGame(); return;
+            }
+            // Self collision
+            if (snake.some(function(s) { return s.x === head.x && s.y === head.y; })) {
+                endGame(); return;
+            }
+
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                score++;
+                scoreEl.textContent = score;
+                if (score > best) { best = score; bestEl.textContent = best; }
+                placeFood();
+            } else {
+                snake.pop();
+            }
+
+            draw();
+        }
+
+        function endGame() {
+            gameOver = true;
+            running = false;
+            clearInterval(intervalId);
+            startBtn.textContent = 'Try Again';
+            draw();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, SIZE, SIZE);
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i <= COLS; i++) {
+                ctx.beginPath(); ctx.moveTo(i * CELL, 0); ctx.lineTo(i * CELL, SIZE); ctx.stroke();
+            }
+            for (let i = 0; i <= ROWS; i++) {
+                ctx.beginPath(); ctx.moveTo(0, i * CELL); ctx.lineTo(SIZE, i * CELL); ctx.stroke();
+            }
+
+            // Food
+            ctx.shadowBlur = 14;
+            ctx.shadowColor = '#c084fc';
+            ctx.fillStyle = '#c084fc';
+            ctx.beginPath();
+            ctx.arc(food.x * CELL + CELL / 2, food.y * CELL + CELL / 2, CELL / 2 - 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Snake
+            for (let i = 0; i < snake.length; i++) {
+                const s = snake[i];
+                const t = i / snake.length;
+                const r = Math.round(102 + (118 - 102) * t);
+                const g = Math.round(126 + (75 - 126) * t);
+                const b = Math.round(234 + (162 - 234) * t);
+                const color = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+                if (i === 0) {
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = '#667eea';
+                }
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.roundRect(s.x * CELL + 1, s.y * CELL + 1, CELL - 2, CELL - 2, 4);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            if (paused) {
+                ctx.fillStyle = 'rgba(255,255,255,0.25)';
+                ctx.font = '600 18px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('PAUSED', SIZE / 2, SIZE / 2);
+            }
+
+            if (gameOver) {
+                ctx.fillStyle = 'rgba(10,10,15,0.6)';
+                ctx.fillRect(0, 0, SIZE, SIZE);
+                ctx.fillStyle = '#c084fc';
+                ctx.shadowBlur = 16;
+                ctx.shadowColor = '#c084fc';
+                ctx.font = '700 24px Courier New, monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText('GAME OVER', SIZE / 2, SIZE / 2 - 10);
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = 'rgba(255,255,255,0.4)';
+                ctx.font = '500 14px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText('Score: ' + score, SIZE / 2, SIZE / 2 + 18);
+            }
+        }
+
+        function drawIdle() {
+            ctx.clearRect(0, 0, SIZE, SIZE);
+            ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i <= COLS; i++) {
+                ctx.beginPath(); ctx.moveTo(i * CELL, 0); ctx.lineTo(i * CELL, SIZE); ctx.stroke();
+            }
+            for (let i = 0; i <= ROWS; i++) {
+                ctx.beginPath(); ctx.moveTo(0, i * CELL); ctx.lineTo(SIZE, i * CELL); ctx.stroke();
+            }
+            // Draw a static snake
+            var demo = [{ x: 10, y: 10 }, { x: 9, y: 10 }, { x: 8, y: 10 }, { x: 7, y: 10 }];
+            for (var i = 0; i < demo.length; i++) {
+                ctx.fillStyle = i === 0 ? '#667eea' : '#764ba2';
+                ctx.beginPath();
+                ctx.roundRect(demo[i].x * CELL + 1, demo[i].y * CELL + 1, CELL - 2, CELL - 2, 4);
+                ctx.fill();
+            }
+            ctx.fillStyle = '#c084fc';
+            ctx.beginPath();
+            ctx.arc(14 * CELL + CELL / 2, 10 * CELL + CELL / 2, CELL / 2 - 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'rgba(255,255,255,0.25)';
+            ctx.font = '600 18px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Press Start to Play', SIZE / 2, SIZE / 2 + 60);
+        }
+
+        startBtn.addEventListener('click', function () {
+            init();
+            running = true;
+            startBtn.textContent = 'Restart';
+            clearInterval(intervalId);
+            draw();
+            intervalId = setInterval(step, SPEED);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Only respond when snake tab is active
+            if (!document.getElementById('game-snake').classList.contains('active')) return;
+            if (e.key === ' ' && running && !gameOver) { e.preventDefault(); paused = !paused; draw(); return; }
+            if (!running || paused || gameOver) return;
+            switch (e.key) {
+                case 'ArrowUp': case 'w': case 'W':
+                    if (dir.y !== 1) nextDir = { x: 0, y: -1 }; e.preventDefault(); break;
+                case 'ArrowDown': case 's': case 'S':
+                    if (dir.y !== -1) nextDir = { x: 0, y: 1 }; e.preventDefault(); break;
+                case 'ArrowLeft': case 'a': case 'A':
+                    if (dir.x !== 1) nextDir = { x: -1, y: 0 }; e.preventDefault(); break;
+                case 'ArrowRight': case 'd': case 'D':
+                    if (dir.x !== -1) nextDir = { x: 1, y: 0 }; e.preventDefault(); break;
+            }
+        });
+
+        // Touch controls
+        document.querySelectorAll('[data-snake]').forEach(function (btn) {
+            function handle(e) {
+                e.preventDefault();
+                if (!running || paused || gameOver) return;
+                var d = btn.dataset.snake;
+                if (d === 'up' && dir.y !== 1) nextDir = { x: 0, y: -1 };
+                if (d === 'down' && dir.y !== -1) nextDir = { x: 0, y: 1 };
+                if (d === 'left' && dir.x !== 1) nextDir = { x: -1, y: 0 };
+                if (d === 'right' && dir.x !== -1) nextDir = { x: 1, y: 0 };
+            }
+            btn.addEventListener('touchstart', handle, { passive: false });
+            btn.addEventListener('mousedown', handle);
+        });
+
+        drawIdle();
+    })();
+
+    // ==================== 2048 ====================
+    (function () {
+        const gridEl = document.getElementById('g2048-grid');
+        const scoreEl = document.getElementById('g2048-score');
+        const bestEl = document.getElementById('g2048-best');
+        const startBtn = document.getElementById('g2048-start');
+
+        let grid, score, best = 0, gameOverState = false;
+
+        function init() {
+            grid = Array.from({ length: 4 }, function () { return [0, 0, 0, 0]; });
+            score = 0;
+            gameOverState = false;
+            scoreEl.textContent = '0';
+            addRandom();
+            addRandom();
+            render();
+        }
+
+        function addRandom() {
+            var empty = [];
+            for (var r = 0; r < 4; r++)
+                for (var c = 0; c < 4; c++)
+                    if (grid[r][c] === 0) empty.push({ r: r, c: c });
+            if (empty.length === 0) return;
+            var cell = empty[Math.floor(Math.random() * empty.length)];
+            grid[cell.r][cell.c] = Math.random() < 0.9 ? 2 : 4;
+        }
+
+        function render() {
+            gridEl.innerHTML = '';
+            // Remove old overlay
+            var oldOverlay = gridEl.parentElement.querySelector('.game2048-over-overlay');
+            if (oldOverlay) oldOverlay.remove();
+
+            for (var r = 0; r < 4; r++) {
+                for (var c = 0; c < 4; c++) {
+                    var cell = document.createElement('div');
+                    cell.className = 'game2048-cell';
+                    var val = grid[r][c];
+                    if (val > 0) {
+                        cell.textContent = val;
+                        cell.setAttribute('data-value', val > 2048 ? '2048' : String(val));
+                    }
+                    gridEl.appendChild(cell);
+                }
+            }
+
+            if (gameOverState) {
+                var overlay = document.createElement('div');
+                overlay.className = 'game2048-over-overlay';
+                overlay.textContent = 'Game Over!';
+                gridEl.parentElement.appendChild(overlay);
+            }
+        }
+
+        function slide(row) {
+            // Remove zeros
+            var arr = row.filter(function (v) { return v !== 0; });
+            var result = [];
+            var i = 0;
+            while (i < arr.length) {
+                if (i + 1 < arr.length && arr[i] === arr[i + 1]) {
+                    var merged = arr[i] * 2;
+                    result.push(merged);
+                    score += merged;
+                    i += 2;
+                } else {
+                    result.push(arr[i]);
+                    i++;
+                }
+            }
+            while (result.length < 4) result.push(0);
+            return result;
+        }
+
+        function move(direction) {
+            if (gameOverState) return false;
+            var oldGrid = grid.map(function (r) { return r.slice(); });
+
+            if (direction === 'left') {
+                for (var r = 0; r < 4; r++) grid[r] = slide(grid[r]);
+            } else if (direction === 'right') {
+                for (var r = 0; r < 4; r++) grid[r] = slide(grid[r].slice().reverse()).reverse();
+            } else if (direction === 'up') {
+                for (var c = 0; c < 4; c++) {
+                    var col = [grid[0][c], grid[1][c], grid[2][c], grid[3][c]];
+                    col = slide(col);
+                    for (var r = 0; r < 4; r++) grid[r][c] = col[r];
+                }
+            } else if (direction === 'down') {
+                for (var c = 0; c < 4; c++) {
+                    var col = [grid[3][c], grid[2][c], grid[1][c], grid[0][c]];
+                    col = slide(col);
+                    for (var r = 0; r < 4; r++) grid[3 - r][c] = col[r];
+                }
+            }
+
+            // Check if anything changed
+            var changed = false;
+            for (var r = 0; r < 4; r++)
+                for (var c = 0; c < 4; c++)
+                    if (grid[r][c] !== oldGrid[r][c]) changed = true;
+
+            if (changed) {
+                addRandom();
+                scoreEl.textContent = score;
+                if (score > best) { best = score; bestEl.textContent = best; }
+                if (isGameOver()) gameOverState = true;
+                render();
+            }
+            return changed;
+        }
+
+        function isGameOver() {
+            for (var r = 0; r < 4; r++)
+                for (var c = 0; c < 4; c++) {
+                    if (grid[r][c] === 0) return false;
+                    if (c < 3 && grid[r][c] === grid[r][c + 1]) return false;
+                    if (r < 3 && grid[r][c] === grid[r + 1][c]) return false;
+                }
+            return true;
+        }
+
+        startBtn.addEventListener('click', init);
+
+        document.addEventListener('keydown', function (e) {
+            if (!document.getElementById('game-2048').classList.contains('active')) return;
+            if (gameOverState) return;
+            switch (e.key) {
+                case 'ArrowUp': case 'w': case 'W': e.preventDefault(); move('up'); break;
+                case 'ArrowDown': case 's': case 'S': e.preventDefault(); move('down'); break;
+                case 'ArrowLeft': case 'a': case 'A': e.preventDefault(); move('left'); break;
+                case 'ArrowRight': case 'd': case 'D': e.preventDefault(); move('right'); break;
+            }
+        });
+
+        // Touch controls
+        document.querySelectorAll('[data-g2048]').forEach(function (btn) {
+            function handle(e) {
+                e.preventDefault();
+                move(btn.dataset.g2048);
+            }
+            btn.addEventListener('touchstart', handle, { passive: false });
+            btn.addEventListener('mousedown', handle);
+        });
+
+        // Swipe support on the grid
+        (function () {
+            var startX, startY;
+            var container = gridEl.parentElement;
+            container.addEventListener('touchstart', function (e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }, { passive: true });
+            container.addEventListener('touchend', function (e) {
+                if (startX === undefined) return;
+                var dx = e.changedTouches[0].clientX - startX;
+                var dy = e.changedTouches[0].clientY - startY;
+                var absDx = Math.abs(dx), absDy = Math.abs(dy);
+                if (Math.max(absDx, absDy) < 30) return;
+                if (absDx > absDy) {
+                    move(dx > 0 ? 'right' : 'left');
+                } else {
+                    move(dy > 0 ? 'down' : 'up');
+                }
+                startX = undefined;
+            }, { passive: true });
+        })();
+
+        init();
     })();
     </script>
 </body>
