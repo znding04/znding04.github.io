@@ -513,3 +513,29 @@ h1 {
     text-decoration: underline;
     text-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
 }
+
+/* Profile Avatar Styling */
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 5px var(--neon-purple);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-cyan), 0 0 10px var(--neon-lilac);
+}
